@@ -1,0 +1,64 @@
+/* Shat Wipes design tokens. Generated from brand/tokens.json. */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@900&family=Inter:wght@400;500;700&display=swap");
+
+:root {
+  /* Colour */
+  --forest-ink: #163300;
+  --lime-voltage: #9fe870;
+  --spruce: #054d28;
+  --linen-mist: #e2f6d5;
+  --obsidian: #0e0f0c;
+  --charcoal: #454745;
+  --slate: #6a6c6a;
+  --pebble: #868685;
+  --fog: #e8ebe6;
+  --paper: #ffffff;
+  --signal-blue: #0b4c72;
+  --alarm-red: #cb272f;
+
+  /* Fonts */
+  --font-display: "Inter Tight", Inter, "Arial Black", system-ui, sans-serif;
+  --font-text: Inter, "Helvetica Neue", system-ui, sans-serif;
+
+  /* Spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-64: 64px;
+  --space-100: 100px;
+  --section-gap: 80px;
+  --page-max: 1200px;
+  --tap-min: 44px;
+
+  /* Radius */
+  --radius-card: 10px;
+  --radius-badge: 16px;
+  --radius-card-lg: 28px;
+  --radius-pill: 9999px;
+
+  /* Shadow */
+  --ring-subtle: 0 0 0 1px rgba(14,15,12,0.12);
+  --ring-inset: inset 0 0 0 1px #868685;
+  --lift-lg: 0 6px 20px 0 rgba(0,0,0,0.08);
+  --lift-xl: 0 10px 32px 0 rgba(0,0,0,0.15), 0 40px 40px 0 rgba(0,0,0,0.04);
+
+  /* Type sizes */
+  --text-display: 105px;
+  --text-heading-lg: 89px;
+  --text-heading: 61px;
+  --text-display-mobile: 56px;
+  --text-heading-lg-mobile: 48px;
+  --text-heading-mobile: 40px;
+  --text-heading-sm: 45px;
+  --text-subheading: 36px;
+  --text-body-lg: 25px;
+  --text-body: 18px;
+  --text-body-sm: 16px;
+  --text-label: 16px;
+  --text-caption: 14px;
+  --text-micro: 12px;
+}

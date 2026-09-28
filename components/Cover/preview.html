@@ -1,0 +1,29 @@
+<!-- @dsCard height=320 -->
+<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{margin:0;background:var(--paper)}
+.c{position:relative;width:960px;height:320px;overflow:hidden;background:var(--paper)}
+.c svg{position:absolute;left:0;top:0}
+.forest{fill:var(--forest-ink)}.lime{fill:var(--lime-voltage)}.spruce{fill:var(--spruce)}.mist{fill:var(--linen-mist)}
+.blk{rx:28px}.pill{rx:20px}
+.glyph{font:900 360px/1 var(--font-display);letter-spacing:-10px}
+.t{position:absolute;left:40px;bottom:32px;max-width:440px}
+.n{font:900 100px/.9 var(--font-display);letter-spacing:-3px;color:var(--forest-ink);margin:0}
+.g{font:400 14px/1.4 var(--font-text);color:var(--slate);margin:16px 0 0}
+</style>
+<div class="c">
+<svg width="960" height="320" viewBox="0 0 960 320">
+<!-- blocks: forest-ink 300x344 slab, lime-voltage 160x152, spruce 160x176, linen-mist 120x40 pills; corners radius-card-lg (28), pills half height
+     arrangement: one tall forest slab bleeding top and bottom, lime and spruce stacked to its right bleeding off the right edge, like packs on a shelf
+     pattern: a distinctive heavy display face -> one oversized lime "S" (display, 900) clipped by the forest slab, the pack wordmark as a shape
+     steps: space-24 gaps between blocks, radius-card-lg on blocks, radius-pill on the peel-flap pills -->
+<defs><clipPath id="slab"><rect x="496" y="-28" width="300" height="376" rx="28"/></clipPath></defs>
+<rect class="forest blk" x="496" y="-28" width="300" height="376"/>
+<text class="lime glyph" x="520" y="330" clip-path="url(#slab)">S</text>
+<rect class="lime blk" x="820" y="-28" width="168" height="160"/>
+<rect class="spruce blk" x="820" y="156" width="168" height="192"/>
+<rect class="mist pill" x="846" y="190" width="100" height="40"/>
+<rect class="forest pill" x="846" y="72" width="100" height="40"/>
+</svg>
+<div class="t"><p class="n">Shat<br>Wipes</p><p class="g">No one has to know.</p></div>
+</div>
