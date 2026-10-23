@@ -1,0 +1,25 @@
+{
+  "_note": "Fill in your real dealership details. Everything the AI writes about your business comes ONLY from this file, so keep it accurate.",
+  "dealership_name": "Your Dealership Name",
+  "tagline": "Good people, good cars, real solutions.",
+  "website_url": "https://example.com",
+  "blog_url": "https://example.github.io/shatwipes",
+  "phone": "(555) 555-0100",
+  "email": "hello@example.com",
+  "street_address": "123 Main Street",
+  "city": "Your City",
+  "state": "ST",
+  "zip": "00000",
+  "service_area": ["Your City", "Nearby Town", "Another Nearby Town"],
+  "brands_sold": ["New and used vehicles"],
+  "services": ["New car sales", "Used car sales", "Financing help", "Trade-ins", "Service and repair"],
+  "hours": ["Mo-Fr 09:00-19:00", "Sa 09:00-17:00"],
+  "what_makes_us_different": [
+    "Replace these lines with true things that set you apart.",
+    "Example: family-owned since 1985.",
+    "Example: no-pressure sales, upfront pricing."
+  ],
+  "community_involvement": [
+    "Replace with real community work, e.g. sponsor of the local youth soccer league."
+  ]
+}

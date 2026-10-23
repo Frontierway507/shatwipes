@@ -1,0 +1,62 @@
+# Writes a new blog post every week with Claude, then publishes the blog
+# to GitHub Pages. To republish after editing files by hand, use the
+# "Run workflow" button and untick "Write a new post".
+name: Blog
+
+on:
+  schedule:
+    - cron: "17 13 * * 1"   # Mondays at 13:17 UTC (morning in the US)
+  workflow_dispatch:         # adds a "Run workflow" button on the Actions tab
+    inputs:
+      write_post:
+        description: "Write a new post this run?"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # to save the new post back to the repo
+  pages: write      # to publish the website
+  id-token: write
+
+concurrency:
+  group: blog
+  cancel-in-progress: false
+
+jobs:
+  write-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r blog/requirements.txt
+
+      - name: Write a new post with Claude
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.write_post)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python blog/scripts/write_post.py
+
+      - name: Save the new post to the repo
+        run: |
+          git config user.name "blog-bot"
+          git config user.email "blog-bot@users.noreply.github.com"
+          git add blog/posts blog/inbox blog/topics.txt
+          git diff --cached --quiet || git commit -m "Blog: add new post"
+          git push
+
+      - name: Build the website
+        run: python blog/scripts/build_site.py
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: blog/public
+      - id: deploy
+        uses: actions/deploy-pages@v4

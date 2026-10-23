@@ -36,3 +36,7 @@ Add this line inside your page's `<head>`:
 ```
 
 Then use the variables in your CSS, for example `background: var(--forest-ink); color: var(--lime-voltage);`.
+
+## Dealership blog
+
+`blog/` holds a self-running "Stories & Solutions" blog: Claude writes and edits a new post every week and publishes it as a website that AI search tools can read. See `blog/README.md` for setup.
